@@ -78,6 +78,24 @@ You need to run the 'Training_on_bins' or the 'Maxime' method three times with t
 In config.C set 'generate_most=true'
 
 ** LIST OF METHODS **
+# **To perform BDT training observable extraction on bins.**
+void BDT::Training_on_bins(TString Data, int NBinsPhi=0, int bin=0, bool build=true, bool eta=false)//, TCut cut, TString DVCS, TString Pi0, vector<TString> vars)
+Data -> Experimental dataset
+NPhiBins -> Number of bins in phi. Default 0 (read Nphibins array on config.C)
+bin -> Kinematic bin (from Mbins array)
+build (boolean) -> perform BDT training?
+eta (boolean) -> Estimate eta contamination?
+
+
+# To evaluate systematic errors over bins
+# It evaluates systematics from cuts, BDT cut, and PID refinement cuts
+void Compute_Systematics(TString Data, int NBinsPhi=0, int bin=0, bool build=true);
+Data -> Experimental dataset
+NPhiBins -> Number of bins in phi. Default 0 (read Nphibins array on config.C)
+bin -> Kinematic bin (from Mbins array)
+build (boolean) -> perform BDT training?
+
+
 #For a single training
 l.Training(l.cut, l.DVCS, l.Pi0, l.Vars);
 
@@ -108,12 +126,6 @@ l.Merge_Bins(l.TData,"Merged_Data.root");
 # Compute Bin Migration matrix
 # It requires a merged BM file beforehand.
 l.Compute_BM_Matrix();
-
-# **To perform BDT training observable extraction on bins.**
-l.Training_on_bins(l.Data, 0, bin, false)
-
-# To evaluate systematic errors over bins
-l.Compute_Systematics(l.Data, 0, bin, true)
 
 # Get BSA from a .root file
 Single_BSA(dataset,NBinsPhi)
