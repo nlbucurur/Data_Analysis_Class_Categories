@@ -37,10 +37,10 @@ void BDT::Training_vars(TString Data, TString MC_DVCS, TString MC_Pi0, TCut cut)
   auto hs8 = new THStack("hs8",t8);
   auto hs9 = new THStack("hs9",t9);
 
-  TH1F *hist1c_Sim = new TH1F("hist1c_Sim","",100,-0.02,0.02);
+  TH1F *hist1c_Sim = new TH1F("hist1c_Sim","",100,-0.2,2.5);
   TH1F *hist2c_Sim = new TH1F("hist2c_Sim","",100, 0,3);
   TH1F *hist3c_Sim = new TH1F("hist3c_Sim","",100,-0.5,0.5);
-  TH1F *hist4c_Sim = new TH1F("hist4c_Sim","",100,-0.2,0.4);
+  TH1F *hist4c_Sim = new TH1F("hist4c_Sim","",100,-0.5,0.5);
   TH1F *hist5c_Sim = new TH1F("hist5c_Sim","",100, -0.2,2);
   
   TH1F *hist6c_Sim = new TH1F("hist6c_Sim","",100,-0.2,0.4);  
@@ -48,10 +48,10 @@ void BDT::Training_vars(TString Data, TString MC_DVCS, TString MC_Pi0, TCut cut)
   TH1F *hist8c_Sim = new TH1F("hist8c_Sim","",100,0,2);
   TH1F *hist9c_Sim = new TH1F("hist9c_Sim","",100,0,100);
   
-  TH1F *hist1c_Data = new TH1F("hist1c_Data","",100,-0.02,0.02);
+  TH1F *hist1c_Data = new TH1F("hist1c_Data","",100,-0.2,2.5);
   TH1F *hist2c_Data = new TH1F("hist2c_Data","",100,0,3);
   TH1F *hist3c_Data = new TH1F("hist3c_Data","",100,-0.5,0.5);
-  TH1F *hist4c_Data = new TH1F("hist4c_Data","",100,-0.2,0.4);
+  TH1F *hist4c_Data = new TH1F("hist4c_Data","",100,-0.5,0.5);
   TH1F *hist5c_Data = new TH1F("hist5c_Data","",100, -0.2,2);
 
   TH1F *hist6c_Data = new TH1F("hist6c_Data","",100,-0.2,0.4);  
@@ -59,10 +59,10 @@ void BDT::Training_vars(TString Data, TString MC_DVCS, TString MC_Pi0, TCut cut)
   TH1F *hist8c_Data = new TH1F("hist8c_Data","",100,0,2);
   TH1F *hist9c_Data = new TH1F("hist9c_Data","",100,0,100);
 
-  TH1F *hist1c_Pi0 = new TH1F("hist1c_Pi0","",100,-0.02,0.02);
+  TH1F *hist1c_Pi0 = new TH1F("hist1c_Pi0","",100,-0.2,2.5);
   TH1F *hist2c_Pi0 = new TH1F("hist2c_Pi0","",100,0,3);
   TH1F *hist3c_Pi0 = new TH1F("hist3c_Pi0","",100,-0.5,0.5);
-  TH1F *hist4c_Pi0 = new TH1F("hist4c_Pi0","",100,-0.2,0.4);
+  TH1F *hist4c_Pi0 = new TH1F("hist4c_Pi0","",100,-0.5,0.5);
   TH1F *hist5c_Pi0 = new TH1F("hist5c_Pi0","",100, -0.2,2);
 
   TH1F *hist6c_Pi0 = new TH1F("hist6c_Pi0","",100,-0.2,0.4);  
@@ -71,16 +71,16 @@ void BDT::Training_vars(TString Data, TString MC_DVCS, TString MC_Pi0, TCut cut)
   TH1F *hist9c_Pi0 = new TH1F("hist9c_Pi0","",100,0,100);
 
   //Variables to plot
-  const char *p1="mm2_eNg";
-  const char *p2="mm2_eg";
-  const char *p3="delta_t";
-  const char *p4="delta_Phi";
-  const char *p5="theta_gamma_X";
+  const char *p1="_mm2_eNg";
+  const char *p2="_mm2_eg";
+  const char *p3="_delta_t";
+  const char *p4="_delta_Phi";
+  const char *p5="_theta_gamma_X";
 
-  const char *p6="delta_t";
-  const char *p7="strip_El_Theta";
-  const char *p8="theta_gamma_X";
-  const char *p9="strip_Ph_Theta";
+  const char *p6="_delta_t";
+  const char *p7="_strip_El_Theta";
+  const char *p8="_theta_gamma_X";
+  const char *p9="_strip_Ph_Theta";
   
   pDVCS_Sim->Project("hist1c_Sim", p1, cut);
   pDVCS_Sim->Project("hist2c_Sim", p2, cut);

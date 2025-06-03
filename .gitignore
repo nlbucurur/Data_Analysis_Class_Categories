@@ -1,0 +1,8 @@
+# Ignore large folders
+include/RooUnfold/
+data/
+Analysis/
+*.root
+*.csv
+*.pdf
+*.png

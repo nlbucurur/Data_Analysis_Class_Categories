@@ -42,9 +42,9 @@ l.config()
 l.TrainingCategory(l.cut, l.DVCS, l.Pi0, l.Vars);
 l.Training_vars(l.Data, l.DVCS, l.Pi0, l.cut);
 gSystem->Exec("mv Analysis/Training_vars.pdf Analysis/Training_vars_All.pdf");
-l.Training_vars(l.Data, l.DVCS, l.Pi0, l.cut + TCut("strip_Ph_Theta < 5"));
+l.Training_vars(l.Data, l.DVCS, l.Pi0, l.cut + TCut("_strip_Ph_Theta < 5"));
 gSystem->Exec("mv Analysis/Training_vars.pdf Analysis/Training_vars_FT.pdf");
-l.Training_vars(l.Data, l.DVCS, l.Pi0, l.cut + TCut("strip_Ph_Theta > 5"));
+l.Training_vars(l.Data, l.DVCS, l.Pi0, l.cut + TCut("_strip_Ph_Theta > 5"));
 gSystem->Exec("mv Analysis/Training_vars.pdf Analysis/Training_vars_FD.pdf");
 l.Add_BDT_var(l.cut, l.Data, l.TData, l.Vars);
 l.Add_BDT_var(l.cut, l.DVCS, l.TDVCS, l.Vars);
