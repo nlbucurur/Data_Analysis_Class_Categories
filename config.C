@@ -86,7 +86,7 @@ void BDT::config()
 
 	cut = "_bestCandidateFlag==1"
 		  " && _theta_gamma_e > 6"
-		  " && _strip_Xbj < 1"
+		  " && _strip_Xbj < 0.6"
 		  " && _strip_Xbj > 0"
 		  " && _t_Ph < 0"
 		  " && _strip_Q2 > 1.0"
@@ -132,7 +132,7 @@ _theta_gamma_e > 5 && abs(_delta_t)<1.5 && abs(_delta_Phi)%180 < 1.5 && TMath::S
 	// Refinemnet cuts, if needed after BDT classification.
 	// cut_ref="_delta_t<0.1 && miss_mom_eNg<0.4 && theta_gamma_X < 0.6";
 	// cut_ref="bestCandidateFlag==1 && theta_gamma_X<1.0";
-	cut_ref = "bestCandidateFlag==1";
+	cut_ref = "_bestCandidateFlag==1";
 
 	// Training variables
 	Vars.push_back(TString("_mm2_eNg"));
@@ -157,75 +157,75 @@ _theta_gamma_e > 5 && abs(_delta_t)<1.5 && abs(_delta_Phi)%180 < 1.5 && TMath::S
 	//|t|>|tmin| cut. It is good to have it coded
 	//(_t_Ph<-(_strip_Q2*0.938 + (_strip_Q2/_strip_Xbj)*( (_strip_Q2/(2*0.938*_strip_Xbj)) - sqrt(_strip_Q2 + pow((_strip_Q2/(2*0.938*_strip_Xbj)),2))))/(0.938 + (_strip_Q2/(2*0.938*_strip_Xbj)) - sqrt(_strip_Q2 + pow((_strip_Q2/(2*0.938*_strip_Xbj)),2))))
 
-	Mbins[0] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
-	Mbins[1] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
-	Mbins[2] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
-	Mbins[3] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
-	Mbins[4] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
-	Mbins[5] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
-	Mbins[6] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
-	Mbins[7] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
-	Mbins[8] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
-	Mbins[9] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
-	Mbins[10] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
-	Mbins[11] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
+	Mbins[0] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
+	Mbins[1] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
+	Mbins[2] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
+	Mbins[3] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
+	Mbins[4] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
+	Mbins[5] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
+	Mbins[6] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
+	Mbins[7] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
+	Mbins[8] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
+	Mbins[9] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
+	Mbins[10] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
+	Mbins[11] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1 && _strip_Q2 < 1.4 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
 
-	Mbins[12] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
-	Mbins[13] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
-	Mbins[14] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
-	Mbins[15] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
-	Mbins[16] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
-	Mbins[17] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
-	Mbins[18] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
-	Mbins[19] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
-	Mbins[20] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
-	Mbins[21] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
-	Mbins[22] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
-	Mbins[23] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
+	Mbins[12] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
+	Mbins[13] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
+	Mbins[14] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
+	Mbins[15] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
+	Mbins[16] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
+	Mbins[17] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
+	Mbins[18] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
+	Mbins[19] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
+	Mbins[20] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
+	Mbins[21] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0    && _strip_Xbj < 0.13");
+	Mbins[22] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.13 && _strip_Xbj < 0.21");
+	Mbins[23] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1.4 && _strip_Q2 < 1.8 && _strip_Xbj > 0.21 && _strip_Xbj < 1.0 ");
 
-	Mbins[24] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0    && _strip_Xbj < 0.16");
-	Mbins[25] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.16 && _strip_Xbj < 0.26");
-	Mbins[26] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.26 && _strip_Xbj < 1.0 ");
-	Mbins[27] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0    && _strip_Xbj < 0.16");
-	Mbins[28] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.16 && _strip_Xbj < 0.26");
-	Mbins[29] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.26 && _strip_Xbj < 1.0 ");
-	Mbins[30] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0    && _strip_Xbj < 0.16");
-	Mbins[31] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.16 && _strip_Xbj < 0.26");
-	Mbins[32] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.26 && _strip_Xbj < 1.0 ");
-	Mbins[33] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0    && _strip_Xbj < 0.16");
-	Mbins[34] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.16 && _strip_Xbj < 0.26");
-	Mbins[35] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.26 && _strip_Xbj < 1.0 ");
+	Mbins[24] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0    && _strip_Xbj < 0.16");
+	Mbins[25] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.16 && _strip_Xbj < 0.26");
+	Mbins[26] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.26 && _strip_Xbj < 1.0 ");
+	Mbins[27] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0    && _strip_Xbj < 0.16");
+	Mbins[28] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.16 && _strip_Xbj < 0.26");
+	Mbins[29] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.26 && _strip_Xbj < 1.0 ");
+	Mbins[30] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0    && _strip_Xbj < 0.16");
+	Mbins[31] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.16 && _strip_Xbj < 0.26");
+	Mbins[32] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.26 && _strip_Xbj < 1.0 ");
+	Mbins[33] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0    && _strip_Xbj < 0.16");
+	Mbins[34] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.16 && _strip_Xbj < 0.26");
+	Mbins[35] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 1.8 && _strip_Q2 < 2.4 && _strip_Xbj > 0.26 && _strip_Xbj < 1.0 ");
 
-	Mbins[36] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0    && _strip_Xbj < 0.21");
-	Mbins[37] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.21 && _strip_Xbj < 0.33");
-	Mbins[38] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
-	Mbins[39] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0    && _strip_Xbj < 0.21");
-	Mbins[40] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.21 && _strip_Xbj < 0.33");
-	Mbins[41] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
-	Mbins[42] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0    && _strip_Xbj < 0.21");
-	Mbins[43] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.21 && _strip_Xbj < 0.33");
-	Mbins[44] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
-	Mbins[45] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0    && _strip_Xbj < 0.21");
-	Mbins[46] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.21 && _strip_Xbj < 0.33");
-	Mbins[47] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
+	Mbins[36] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0    && _strip_Xbj < 0.21");
+	Mbins[37] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.21 && _strip_Xbj < 0.33");
+	Mbins[38] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
+	Mbins[39] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0    && _strip_Xbj < 0.21");
+	Mbins[40] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.21 && _strip_Xbj < 0.33");
+	Mbins[41] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
+	Mbins[42] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0    && _strip_Xbj < 0.21");
+	Mbins[43] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.21 && _strip_Xbj < 0.33");
+	Mbins[44] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
+	Mbins[45] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0    && _strip_Xbj < 0.21");
+	Mbins[46] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.21 && _strip_Xbj < 0.33");
+	Mbins[47] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 2.4 && _strip_Q2 < 3.25 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
 
-	Mbins[48] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0    && _strip_Xbj < 0.33");
-	Mbins[49] = TCut("bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
-	Mbins[50] = TCut("bestCandidateFlag==1 && _t_Ph<0.0  && _t_Ph>-0.4 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0    && _strip_Xbj < 0.33 ");
-	Mbins[51] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0  ");
-	Mbins[52] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0.   && _strip_Xbj < 0.33");
-	Mbins[53] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
-	Mbins[54] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0    && _strip_Xbj < 0.33");
-	Mbins[55] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
+	Mbins[48] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0    && _strip_Xbj < 0.33");
+	Mbins[49] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0    && _t_Ph>-0.2 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
+	Mbins[50] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0  && _t_Ph>-0.4 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0    && _strip_Xbj < 0.33 ");
+	Mbins[51] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0  ");
+	Mbins[52] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0.   && _strip_Xbj < 0.33");
+	Mbins[53] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
+	Mbins[54] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0    && _strip_Xbj < 0.33");
+	Mbins[55] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 3.25 && _strip_Q2 < 5.0 && _strip_Xbj > 0.33 && _strip_Xbj < 1.0 ");
 
-	Mbins[56] = TCut("bestCandidateFlag==1 && _t_Ph<0.0 && _t_Ph>-0.2 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0    && _strip_Xbj < 0.55");
-	Mbins[57] = TCut("bestCandidateFlag==1 && _t_Ph<0.0 && _t_Ph>-0.2 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0.55 && _strip_Xbj < 1.0 ");
-	Mbins[58] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0    && _strip_Xbj < 0.55");
-	Mbins[59] = TCut("bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0.55 && _strip_Xbj < 1.0 ");
-	Mbins[60] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0    && _strip_Xbj < 0.55");
-	Mbins[61] = TCut("bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0.55 && _strip_Xbj < 1.0 ");
-	Mbins[62] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0    && _strip_Xbj < 0.55");
-	Mbins[63] = TCut("bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0.55 && _strip_Xbj < 1.0 ");
+	Mbins[56] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0 && _t_Ph>-0.2 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0    && _strip_Xbj < 0.55");
+	Mbins[57] = TCut("_bestCandidateFlag==1 && _t_Ph<0.0 && _t_Ph>-0.2 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0.55 && _strip_Xbj < 1.0 ");
+	Mbins[58] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0    && _strip_Xbj < 0.55");
+	Mbins[59] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.2 && _t_Ph>-0.4 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0.55 && _strip_Xbj < 1.0 ");
+	Mbins[60] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0    && _strip_Xbj < 0.55");
+	Mbins[61] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.4 && _t_Ph>-0.8 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0.55 && _strip_Xbj < 1.0 ");
+	Mbins[62] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0    && _strip_Xbj < 0.55");
+	Mbins[63] = TCut("_bestCandidateFlag==1 && _t_Ph<-0.8 && _t_Ph>-100 && _strip_Q2 > 5.0 && _strip_Q2 < 15.0 && _strip_Xbj > 0.55 && _strip_Xbj < 1.0 ");
 
 	bins = {{{-0.2, 0, 1, 1.4, 0, 0.13},
 			 {-0.2, 0, 1, 1.4, 0.13, 0.21},

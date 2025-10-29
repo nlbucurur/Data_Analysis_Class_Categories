@@ -12,7 +12,7 @@ void BDT::eppi0_hists(){
 
   double factor=1;
   
-  TCut cut =TCut("bestCandidateFlag==1 && abs(mm2_eNgg)<0.01 && strip_Pi0_2DChi2 < 0.04 && strip_Pi0_E > 2 && strip_Pi0_E<9 && strip_Pi0_Theta > 5 && strip_Pi0_Theta < 33 && N_Ph<3 && abs(t_Pi0/strip_Q2)<1");//&& strip_Pi0_IM2 > 0.012 && strip_Pi0_IM2 < 0.022");
+  TCut cut =TCut("_bestCandidateFlag==1 && abs(_mm2_eNgg)<0.01 && _strip_Pi0_2DChi2 < 0.04 && _strip_Pi0_E > 2 && _strip_Pi0_E<9 && _strip_Pi0_Theta > 5 && _strip_Pi0_Theta < 33 && _N_Ph<3 && _abs(t_Pi0/strip_Q2)<1");//&& strip_Pi0_IM2 > 0.012 && strip_Pi0_IM2 < 0.022");
 
   //TCut cut =TCut("bestCandidateFlag==1 && strip_Q2 > 1.0 && strip_W > 2 && strip_Nuc_P > 0.35 && strip_El_P > 1.0  && strip_El_vz < 10 && strip_El_vz > -12 && TMath::Abs(Phi_Nuc - Phi_Pi0) < 2 && TMath::Abs(t_Nuc - t_Pi0) < 2 && TMath::Sqrt(Xbal * Xbal + Ybal*Ybal + Zbal*Zbal) <1");
   

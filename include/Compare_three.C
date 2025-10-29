@@ -11,7 +11,7 @@ void BDT::Compare_three(TCut cut, TString Data1, TString Data2){
   TTree *tree2 = (TTree*)input3->Get("pDVCS");
 
   TFile *input4 = new TFile(Folder + Data3,"READ");
-  TTree *tree3 = (TTree*)input4->Get("pDVCS");
+  TTree *tree3 = (TTree*)input4->Get("eppi0");
 
   double factor=1;
   TH1F *hist1c_3 = new TH1F("hist1c_3","#bf{q}'(GeV)",100,2,10);
@@ -45,15 +45,15 @@ void BDT::Compare_three(TCut cut, TString Data1, TString Data2){
   TH1F *hist9c_1 = new TH1F("hist9c_1","P_{#perp} (GeV)",100,0,0.06);
 
   //Variables to plot
-  const char *p1="strip_Ph_P";
-  const char *p2="strip_El_P";
-  const char *p3="mm2_eNg";
-  const char *p4="mm2_eg";
-  const char *p5="delta_Phi";
-  const char *p6="delta_t";
-  const char *p7="miss_mom_eNg";
-  const char *p8="theta_gamma_X";
-  const char *p9="p_perp";
+  const char *p1="_strip_Ph_P";
+  const char *p2="_strip_El_P";
+  const char *p3="_mm2_eNg";
+  const char *p4="_mm2_eg";
+  const char *p5="_delta_Phi";
+  const char *p6="_delta_t";
+  const char *p7="_miss_mom_eNg";
+  const char *p8="_theta_gamma_X";
+  const char *p9="_p_perp";
 
   tree3->Project("hist1c_3", p1, cut);
   tree3->Project("hist2c_3", p2, cut);

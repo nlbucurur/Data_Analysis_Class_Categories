@@ -1,0 +1,203 @@
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+type value fit error on fit
+Raw 0 0 0
+Mostafa 0 0 0
+Maxime 0 0 0
+Entries before BDT (All/FT/FD): 0 0 0
+Mostafa entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%
+Maxime  entries/estimation (bef/aft/bef_FT/aft_FT/bef_FD/aft_FD) on bin 1 before/after: 0 0 0 0 0% 0% 0% 0% 0% 0%

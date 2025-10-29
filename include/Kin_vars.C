@@ -4,7 +4,8 @@ void BDT::Kin_vars(TString Data1, TString Data2, TString Data3, TCut cut){
   c1->Divide(3,3);
 
   TFile *input3 = new TFile(Folder + Data3,"READ");
-  TTree *tree3  = (TTree*)input3->Get("pDVCS");
+  // TTree *tree3  = (TTree*)input3->Get("pDVCS");
+  TTree *tree3  = (TTree*)input3->Get("eppi0");
 
   TFile *input2 = new TFile(Folder + Data2,"READ");
   TTree *tree2  = (TTree*)input2->Get("pDVCS");
@@ -78,15 +79,15 @@ void BDT::Kin_vars(TString Data1, TString Data2, TString Data3, TCut cut){
   hs9 = new THStack("hs9","#phi_{p} (deg)");
 
   //Variables to plot
-  p1="strip_Ph_P";
-  p2="strip_El_P";
-  p3="strip_Nuc_P";
-  p4="strip_Ph_Theta";
-  p5="strip_El_Theta";
-  p6="strip_Nuc_Theta";
-  p7="strip_Ph_Phi";
-  p8="strip_El_Phi";
-  p9="strip_Nuc_Phi";
+  p1="_strip_Ph_P";
+  p2="_strip_El_P";
+  p3="_strip_Nuc_P";
+  p4="_strip_Ph_Theta";
+  p5="_strip_El_Theta";
+  p6="_strip_Nuc_Theta";
+  p7="_strip_Ph_Phi";
+  p8="_strip_El_Phi";
+  p9="_strip_Nuc_Phi";
 
   hist1c_3 = new TH1F("hist1c_3","",100,2,10);
   hist2c_3 = new TH1F("hist2c_3","",100,0,7);

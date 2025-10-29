@@ -2,7 +2,8 @@
 
 void BDT::Add_BDT_var(TCut cutSB, TString Data, TString output, vector<TString> vars)
 {
-  TString Folder = "/home/lorena/Documents/Thesis/Data_Analysis_Class/Analysis/";
+  // TString Folder = "/home/lorena/Documents/Thesis/Data_Analysis_Class/Analysis/";
+  TString Folder = "/home/lorena/Documents/Thesis/Data_Analysis_Class/Analysis1/bin_missMom_1/";
 
   cout << "-Start TMVA-" << endl;
 

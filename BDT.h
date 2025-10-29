@@ -244,8 +244,11 @@ public:
     gROOT->ProcessLine(".L include/Bin_View.C");
     gROOT->ProcessLine(".L include/Grid_Bins.C");
     gROOT->ProcessLine(".L include/Training_on_bins.C");
+    gROOT->ProcessLine(".L include/Training_on_bins_MissP.C");
     gROOT->ProcessLine(".L include/Training_on_Maxime_bins.C");
     gROOT->ProcessLine(".L include/Single_BSA.C");
+    gROOT->ProcessLine(".L include/BSA_on_bins_MissMom.C");
+    gROOT->ProcessLine(".L include/BSA_on_bins_MissMom1.C");
     gROOT->ProcessLine(".L include/Single_eta_BSA.C");
     gROOT->ProcessLine(".L include/Single_BSA_Maxime.C");
     gROOT->ProcessLine(".L include/Fitting_on_bins.C");
@@ -304,6 +307,9 @@ public:
   void Bin_View(TString Data, double *bins_t, TTree*& ch1, int NumEv=29000);
   vector<vector<double>> Grid_Bins(int ii, double *bins_t, int NBINS_t, int NumEv, int NBINS_x, TTree*& Tree);
   void Training_on_bins(TString Data, int NBinsPhi=0, int bin=0, bool build=true, bool eta=false);
+  void Training_on_bins_MissP(TString Data, int NBinsPhi=0, int bin=0, bool build=true, bool eta=false);
+  void BSA_on_bins_MissMom();
+  void BSA_on_bins_MissMom1();
   void Training_on_Maxime_bins(TString Data);
   TH1* Single_BSA(TString Data, int P_bins=12);
   TH1* Single_eta_BSA(TString Data, int P_bins, TCut cut);
@@ -407,71 +413,71 @@ void BDT::printProgress(double percentage) {
 
 void BDT::init_tree(TTree*& pDVCS_tree){
 
-  pDVCS_tree->Branch("RunNumber", &RunNumber);
-  pDVCS_tree->Branch("EventNumber", &EventNumber);
-  pDVCS_tree->Branch("Helicity", &Helicity);
+  pDVCS_tree->Branch("_RunNumber", &RunNumber);
+  pDVCS_tree->Branch("_EventNumber", &EventNumber);
+  pDVCS_tree->Branch("_Helicity", &Helicity);
 
-  pDVCS_tree->Branch("strip_Q2", &strip_Q2);
-  pDVCS_tree->Branch("strip_W", &strip_W);
-  pDVCS_tree->Branch("strip_Xbj", &strip_Xbj);
+  pDVCS_tree->Branch("_strip_Q2", &strip_Q2);
+  pDVCS_tree->Branch("_strip_W", &strip_W);
+  pDVCS_tree->Branch("_strip_Xbj", &strip_Xbj);
 
-  pDVCS_tree->Branch("strip_El_px", &strip_El_px);
-  pDVCS_tree->Branch("strip_El_py", &strip_El_py);
-  pDVCS_tree->Branch("strip_El_pz", &strip_El_pz);
-  pDVCS_tree->Branch("strip_El_E", &strip_El_E);
-  pDVCS_tree->Branch("strip_El_P", &strip_El_P);
-  pDVCS_tree->Branch("strip_El_Theta", &strip_El_Theta);
-  pDVCS_tree->Branch("strip_El_Phi", &strip_El_Phi);
-  pDVCS_tree->Branch("strip_El_vz", &strip_El_vz);
+  pDVCS_tree->Branch("_strip_El_px", &strip_El_px);
+  pDVCS_tree->Branch("_strip_El_py", &strip_El_py);
+  pDVCS_tree->Branch("_strip_El_pz", &strip_El_pz);
+  pDVCS_tree->Branch("_strip_El_E", &strip_El_E);
+  pDVCS_tree->Branch("_strip_El_P", &strip_El_P);
+  pDVCS_tree->Branch("_strip_El_Theta", &strip_El_Theta);
+  pDVCS_tree->Branch("_strip_El_Phi", &strip_El_Phi);
+  pDVCS_tree->Branch("_strip_El_vz", &strip_El_vz);
 
-  pDVCS_tree->Branch("strip_Ph_px", &strip_Ph_px);
-  pDVCS_tree->Branch("strip_Ph_py", &strip_Ph_py);
-  pDVCS_tree->Branch("strip_Ph_pz", &strip_Ph_pz);
-  pDVCS_tree->Branch("strip_Ph_E", &strip_Ph_E);
-  pDVCS_tree->Branch("strip_Ph_P", &strip_Ph_P);
-  pDVCS_tree->Branch("strip_Ph_Theta", &strip_Ph_Theta);
-  pDVCS_tree->Branch("strip_Ph_Phi", &strip_Ph_Phi);
+  pDVCS_tree->Branch("_strip_Ph_px", &strip_Ph_px);
+  pDVCS_tree->Branch("_strip_Ph_py", &strip_Ph_py);
+  pDVCS_tree->Branch("_strip_Ph_pz", &strip_Ph_pz);
+  pDVCS_tree->Branch("_strip_Ph_E", &strip_Ph_E);
+  pDVCS_tree->Branch("_strip_Ph_P", &strip_Ph_P);
+  pDVCS_tree->Branch("_strip_Ph_Theta", &strip_Ph_Theta);
+  pDVCS_tree->Branch("_strip_Ph_Phi", &strip_Ph_Phi);
     
-  pDVCS_tree->Branch("strip_Nuc_px", &strip_Nuc_px);
-  pDVCS_tree->Branch("strip_Nuc_py", &strip_Nuc_py);
-  pDVCS_tree->Branch("strip_Nuc_pz", &strip_Nuc_pz);
-  pDVCS_tree->Branch("strip_Nuc_E", &strip_Nuc_E);
-  pDVCS_tree->Branch("strip_Nuc_P", &strip_Nuc_P);
-  pDVCS_tree->Branch("strip_Nuc_Theta", &strip_Nuc_Theta);
-  pDVCS_tree->Branch("strip_Nuc_Phi", &strip_Nuc_Phi);
+  pDVCS_tree->Branch("_strip_Nuc_px", &strip_Nuc_px);
+  pDVCS_tree->Branch("_strip_Nuc_py", &strip_Nuc_py);
+  pDVCS_tree->Branch("_strip_Nuc_pz", &strip_Nuc_pz);
+  pDVCS_tree->Branch("_strip_Nuc_E", &strip_Nuc_E);
+  pDVCS_tree->Branch("_strip_Nuc_P", &strip_Nuc_P);
+  pDVCS_tree->Branch("_strip_Nuc_Theta", &strip_Nuc_Theta);
+  pDVCS_tree->Branch("_strip_Nuc_Phi", &strip_Nuc_Phi);
 
-  pDVCS_tree->Branch("Phi_Nuc", &Phi_Nuc);
-  pDVCS_tree->Branch("Phi_Ph", &Phi_Ph);
-  pDVCS_tree->Branch("delta_Phi", &delta_Phi);
+  pDVCS_tree->Branch("_Phi_Nuc", &Phi_Nuc);
+  pDVCS_tree->Branch("_Phi_Ph", &Phi_Ph);
+  pDVCS_tree->Branch("_delta_Phi", &delta_Phi);
 
-  pDVCS_tree->Branch("t_Nuc", &t_Nuc);
-  pDVCS_tree->Branch("t_Ph", &t_Ph);
-  pDVCS_tree->Branch("delta_t", &delta_t);
-  pDVCS_tree->Branch("cos2theta", &cos2theta);
-  pDVCS_tree->Branch("dcos2theta", &dcos2theta);
-  pDVCS_tree->Branch("Ph_E_pDVCS", &Ph_E_Th);
-  pDVCS_tree->Branch("delta_E", &deltaE);
+  pDVCS_tree->Branch("_t_Nuc", &t_Nuc);
+  pDVCS_tree->Branch("_t_Ph", &t_Ph);
+  pDVCS_tree->Branch("_delta_t", &delta_t);
+  pDVCS_tree->Branch("_cos2theta", &cos2theta);
+  pDVCS_tree->Branch("_dcos2theta", &dcos2theta);
+  pDVCS_tree->Branch("_Ph_E_pDVCS", &Ph_E_Th);
+  pDVCS_tree->Branch("_delta_E", &deltaE);
 
-  pDVCS_tree->Branch("mm2_eNg", &mm2_eNg);
-  pDVCS_tree->Branch("mm2_eNg_N", &mm2_eNg_N);
-  pDVCS_tree->Branch("mm2_eg", &mm2_eg);
-  pDVCS_tree->Branch("mm2_ep", &mm2_ep);
-  pDVCS_tree->Branch("mm2_gp", &mm2_gp);
-  pDVCS_tree->Branch("mm2_e", &mm2_e);
-  pDVCS_tree->Branch("mm2_g", &mm2_g);
-  pDVCS_tree->Branch("mm2_p", &mm2_p);
+  pDVCS_tree->Branch("_mm2_eNg", &mm2_eNg);
+  pDVCS_tree->Branch("_mm2_eNg_N", &mm2_eNg_N);
+  pDVCS_tree->Branch("_mm2_eg", &mm2_eg);
+  pDVCS_tree->Branch("_mm2_ep", &mm2_ep);
+  pDVCS_tree->Branch("_mm2_gp", &mm2_gp);
+  pDVCS_tree->Branch("_mm2_e", &mm2_e);
+  pDVCS_tree->Branch("_mm2_g", &mm2_g);
+  pDVCS_tree->Branch("_mm2_p", &mm2_p);
 
 
-  pDVCS_tree->Branch("Xbal", &Xbal);
-  pDVCS_tree->Branch("Ybal", &Ybal);
-  pDVCS_tree->Branch("Zbal", &Zbal);
-  pDVCS_tree->Branch("Ebal", &Ebal);
-  pDVCS_tree->Branch("miss_mom_eNg", &miss_mom_eNg);
-  pDVCS_tree->Branch("p_perp", &p_perp);
-  pDVCS_tree->Branch("theta_gamma_e", &theta_gamma_e);
-  pDVCS_tree->Branch("theta_gamma_X", &theta_gamma_X);
-  pDVCS_tree->Branch("theta_N_e", &theta_N_e);
-  pDVCS_tree->Branch("bestCandidateFlag", &bestCandidateFlag);
+  pDVCS_tree->Branch("_Xbal", &Xbal);
+  pDVCS_tree->Branch("_Ybal", &Ybal);
+  pDVCS_tree->Branch("_Zbal", &Zbal);
+  pDVCS_tree->Branch("_Ebal", &Ebal);
+  pDVCS_tree->Branch("_miss_mom_eNg", &miss_mom_eNg);
+  pDVCS_tree->Branch("_p_perp", &p_perp);
+  pDVCS_tree->Branch("_theta_gamma_e", &theta_gamma_e);
+  pDVCS_tree->Branch("_theta_gamma_X", &theta_gamma_X);
+  pDVCS_tree->Branch("_theta_N_e", &theta_N_e);
+  pDVCS_tree->Branch("_bestCandidateFlag", &bestCandidateFlag);
 }
 
 

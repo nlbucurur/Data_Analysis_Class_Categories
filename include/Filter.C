@@ -3,7 +3,8 @@
 void BDT::Filter(TString TData, TCut TheCut, TString output){
     
   TChain *chain= new TChain("pDVCS");
-  chain->Add(Folder+TData);
+  chain->Add(TData);
+  // chain->Add(Folder+TData);
     
   
   TTree* Tree = chain ;

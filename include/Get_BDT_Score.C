@@ -43,7 +43,7 @@ void BDT::Get_BDT_Score()
    TTree *pDVCS = (TTree *)(File_DVCS->Get("pDVCS"));
 
    TH1D *hData = new TH1D("hData","Data",50,-0.5, 0.5);
-   TCut TheCut =TCut("bestCandidateFlag==1 && strip_Xbj <1 && strip_Xbj >0 && t_Ph <0 && strip_Q2 > 1.0 && strip_W > 2 && strip_Nuc_P > 0.35 && strip_El_P > 1.0 && strip_Ph_P>2  && strip_El_vz < 10 && strip_El_vz > -12 && TMath::Abs(Phi_Nuc - Phi_Ph) < 2 && TMath::Abs(t_Nuc - t_Ph) < 2 && TMath::Sqrt(Xbal * Xbal + Ybal*Ybal + Zbal*Zbal) <1");
+   TCut TheCut =TCut("_bestCandidateFlag==1 && _strip_Xbj <1 && _strip_Xbj >0 && _t_Ph <0 && _strip_Q2 > 1.0 && _strip_W > 2 && _strip_Nuc_P > 0.35 && _strip_El_P > 1.0 && _strip_Ph_P > 2  && _strip_El_vz < 10 && _strip_El_vz > -12 && TMath::Abs(_Phi_Nuc - _Phi_Ph) < 2 && TMath::Abs(_t_Nuc - _t_Ph) < 2 && TMath::Sqrt(_Xbal * _Xbal + _Ybal * _Ybal + _Zbal * _Zbal) < 1");
    pDVCS->Project("hData", "_strip_Nuc_BDT",TheCut);
 
    hData->SetMarkerColor(kBlack);
@@ -78,13 +78,14 @@ void BDT::Get_BDT_Score()
    hData->Draw("hist same");
 canvas1->BuildLegend();
 
-/*      
-   TLegend *leg = new TLegend(0.105,0.78,0.505,0.9);
+// /*      
+   // TLegend *leg = new TLegend(0.105,0.78,0.505,0.9);
+   TLegend *leg = new TLegend(0.7, 0.7, 0.9, 0.9);
    leg->AddEntry("MVA_BDT_S","Signal","F");
    leg->AddEntry("MVA_BDT_B","Background","F");
    leg->AddEntry("Data","Data","F");
    leg->Draw();
-*/
+// */
 
 
   canvas1->Print(Folder + TString("BDT_Score.pdf"));

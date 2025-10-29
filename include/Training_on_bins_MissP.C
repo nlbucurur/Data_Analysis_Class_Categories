@@ -22,28 +22,31 @@ void BDT::Training_on_bins_MissP(TString Data, int NBinsPhi = 0, int bin = 0, bo
     }
 
     TCut cut_bin = Mbins_missMom[k];
+
     std::cout << Form("\n\n t_Ph>%f && t_Ph<%f && strip_Q2>%f && strip_Q2<%f && strip_Xbj>%f && strip_Xbj<%f && _miss_mom_eNg>=%f && _miss_mom_eNg<%f", bins_missMom[k][0], bins_missMom[k][1], bins_missMom[k][2], bins_missMom[k][3], bins_missMom[k][4], bins_missMom[k][5], bins_missMom[k][6], bins_missMom[k][7]) << endl;
+
     boundaries.clear();
-    boundaries.push_back(bins[k][0]);
-    boundaries.push_back(bins[k][1]);
-    boundaries.push_back(bins[k][2]);
-    boundaries.push_back(bins[k][3]);
-    boundaries.push_back(bins[k][4]);
-    boundaries.push_back(bins[k][5]);
-    boundaries.push_back(bins[k][6]);
-    boundaries.push_back(bins[k][7]);
-    Folder = Folder_old + TString("bin_") + Form("%i/", bin_number);
+    boundaries.push_back(bins_missMom[k][0]);
+    boundaries.push_back(bins_missMom[k][1]);
+    boundaries.push_back(bins_missMom[k][2]);
+    boundaries.push_back(bins_missMom[k][3]);
+    boundaries.push_back(bins_missMom[k][4]);
+    boundaries.push_back(bins_missMom[k][5]);
+    boundaries.push_back(bins_missMom[k][6]);
+    boundaries.push_back(bins_missMom[k][7]);
+
+    Folder = Folder_old + TString("bin_missMom_") + Form("%i/", bin_number);
     gSystem->Exec(TString("mkdir -p ") + Folder);
 
     // Flag for training category or normal
     // Check if there is enough background in the FT. At least 100 events
-    TChain *background = new TChain("pDVCS");
+    TChain *background = new TChain("eppi0");
     background->Add(Pi0);
 
     TH1F *hist1 = new TH1F("hist1", "", 100, 0, 1);
     TH1F *hist2 = new TH1F("hist2", "", 100, 0, 1);
-    background->Project("hist1", "strip_Xbj", cut + cut_bin + TCut("strip_Ph_Theta < 5"));
-    background->Project("hist2", "strip_Xbj", cut + cut_bin);
+    background->Project("hist1", "_strip_Xbj", cut + cut_bin + TCut("_strip_Ph_Theta < 5"));
+    background->Project("hist2", "_strip_Xbj", cut + cut_bin);
     nft = hist1->GetEntries() / hist2->GetEntries();
     categories = (nft > 0.05 && hist1->GetEntries() > 50) ? true : false;
     int nev_bkg = hist2->GetEntries();
@@ -84,11 +87,20 @@ void BDT::Training_on_bins_MissP(TString Data, int NBinsPhi = 0, int bin = 0, bo
         nodataFile << "true" << endl;
         nodataFile.close();
       }
+
       Add_BDT_var(cut + cut_bin, DVCS, TDVCS, Vars);
       Add_BDT_var(cut + cut_bin, Pi0, TPi0, Vars);
       Add_BDT_var(cut + cut_bin, Data, TData, Vars);
-      Filter(Data, cut + cut_bin, Data_name);
-      Get_BDT_Score();
+      Filter(Folder + TData, cut + cut_bin, TString("Data_NP_Theta_g_5.root"));
+      
+      if (!nodata)
+      {
+        Get_BDT_Score();
+      }
+      else
+      {
+        std::cout << "Skipping Get_BDT_Score because no training was performed in this bin." << std::endl;
+      }
 
       Filter(Folder + TData, cut + cut_bin + TCut(Form("_strip_Nuc_BDT > %f", BDT_value)), TString("Classified_Data.root"));
       Training_vars(Folder + TData, Folder + TDVCS, Folder + TPi0, cut + cut_bin);

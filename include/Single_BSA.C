@@ -82,7 +82,6 @@ TH1 *BDT::Single_BSA(TString Data, int P_bins = 12)
   BA->GetXaxis()->SetTitle("#phi(deg)");
   BA->GetYaxis()->SetTitle("Beam Spin Asymmetry (BSA)");
 
-
   // BA->GetXaxis()->SetTitleSize(0.06);
   // BA->GetYaxis()->SetTitleSize(0.06);
   // BA->GetXaxis()->SetLabelSize(0.045);
@@ -124,6 +123,20 @@ TH1 *BDT::Single_BSA(TString Data, int P_bins = 12)
   // Amplitudes
   box->DrawLatex(0.73, 0.66, Form("A_{LU}^{Cal}       = %.3f", BSA_Amplitude));
   box->DrawLatex(0.73, 0.60, Form("A_{LU}^{fit}        = %.3f", BSA_Amplitude_fit));
+
+  int Np = histp->GetEntries();
+  int Nm = histm->GetEntries();
+  int Ntotal = Np + Nm;
+
+  std::cout << "Number of events used in asymmetry calculation:" << std::endl;
+  std::cout << "  Positive helicity: " << Np << std::endl;
+  std::cout << "  Negative helicity: " << Nm << std::endl;
+  std::cout << "  Total: " << Ntotal << std::endl;
+
+  int maxBin = BA->GetMaximumBin();                       // número de bin con el valor máximo
+  double phiAtMax = BA->GetXaxis()->GetBinCenter(maxBin); // ángulo φ en grados
+
+  std::cout << "Maximum BSA at φ = " << phiAtMax << " degrees" << std::endl;
 
   // auto *g = new TGraph(Form("Triple%i/Triple%i.txt",k+1,NBINS_Q*l + m+1));
   // g->DrawClone("SAME");

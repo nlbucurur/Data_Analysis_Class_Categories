@@ -20,23 +20,23 @@ void BDT::Get_Contamination(TCut cut, double BDT_cut)
   double sig_eff, bkg_eff;
 
   TH1F *hDVCS_0 = new TH1F("hDVCS_0","hDVCS_0",100,0,4);
-  ch1->Project("hDVCS_0","mm2_eg",cut);
+  ch1->Project("hDVCS_0","_mm2_eg",cut);
   N_DVCS_Train=hDVCS_0->GetEntries();
 
   TH1F *hPi0_0 = new TH1F("hPi0_0","hPi0_0",100,0,4);
-  ch2->Project("hPi0_0","mm2_eg",cut);
+  ch2->Project("hPi0_0","_mm2_eg",cut);
   N_Pi0_Train=hPi0_0->GetEntries();
   
   TH1F *hData_0 = new TH1F("hData_0","hData_0",100,0,4);
-  ch3->Project("hData_0","mm2_eg",cut);
+  ch3->Project("hData_0","_mm2_eg",cut);
   N_before=hData_0->GetEntries();
 
   TH1F *hData_0_FT = new TH1F("hData_0_FT","hData_0_FT",100,0,4);
-  ch3->Project("hData_0_FT","mm2_eg",cut + TCut("strip_Ph_Theta < 5"));
+  ch3->Project("hData_0_FT","_mm2_eg",cut + TCut("_strip_Ph_Theta < 5"));
   N_before_FT=hData_0_FT->GetEntries();
 
   TH1F *hData_0_FD = new TH1F("hData_0_FD","hData_0",100,0,4);
-  ch3->Project("hData_0_FD","mm2_eg",cut + TCut("strip_Ph_Theta > 5"));
+  ch3->Project("hData_0_FD","_mm2_eg",cut + TCut("_strip_Ph_Theta > 5"));
   N_before_FD=hData_0_FD->GetEntries();
   std::cout<<"Number of events on bin (All/FT/FD) "<<N_before<<" "<<N_before_FT<<" "<<N_before_FD<<endl;
   std::cout<<"*******************************************"<<endl;
@@ -62,15 +62,15 @@ void BDT::Get_Contamination(TCut cut, double BDT_cut)
       return;
     }
   TH1F *hDVCS = new TH1F("hDVCS","hDVCS",100,0,4);
-  ch1->Project("hDVCS","mm2_eg",cut && TCut(Form("_strip_Nuc_BDT > %f",BDT_cut)));
+  ch1->Project("hDVCS","_mm2_eg",cut && TCut(Form("_strip_Nuc_BDT > %f",BDT_cut)));
   N_DVCS_after_BDT=hDVCS->GetEntries();
 
   TH1F *hPi0 = new TH1F("hPi0","hPi0",100,0,4);
-  ch2->Project("hPi0","mm2_eg",cut && TCut(Form("_strip_Nuc_BDT > %f",BDT_cut)));
+  ch2->Project("hPi0","_mm2_eg",cut && TCut(Form("_strip_Nuc_BDT > %f",BDT_cut)));
   N_Pi0_after_BDT=hPi0->GetEntries();
   
   TH1F *hData = new TH1F("hData","hData",100,0,4);
-  ch3->Project("hData","mm2_eg",cut && TCut(Form("_strip_Nuc_BDT > %f",BDT_cut)));
+  ch3->Project("hData","_mm2_eg",cut && TCut(Form("_strip_Nuc_BDT > %f",BDT_cut)));
   N_after=hData->GetEntries();
 
   sig_eff=N_DVCS_after_BDT/N_DVCS_Train;
